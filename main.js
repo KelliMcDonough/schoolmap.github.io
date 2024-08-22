@@ -467,18 +467,18 @@ function search(e) {
         (element.dataset["name"].search(dataRegExp) >= 0)) ||
         (element.dataset["teacher"] &&
             (element.dataset["teacher"].search(dataRegExp) >= 0 ||
-                element.dataset["teacher"].split(".")[1].search(dataRegExp) >= 0)) ||
+                element.dataset["teacher"].search(dataRegExp) >= 0)) ||
         (element.dataset["tag"] &&
             (element.dataset["tag"].search(dataRegExp) >= 0))));
     results.sort((first, second) => {
         const firstString = ((second.dataset["name"] &&
             (second.dataset["name"].search(dataRegExp) >= 0)) ? second.dataset["name"] : ((second.dataset["teacher"] &&
             (second.dataset["teacher"].search(dataRegExp) >= 0 ||
-                second.dataset["teacher"].split(".")[1].search(dataRegExp) >= 0)) ? second.dataset["teacher"] : ((second.dataset["tag"] &&
+                second.dataset["teacher"].search(dataRegExp) >= 0)) ? second.dataset["teacher"] : ((second.dataset["tag"] &&
             (second.dataset["tag"].search(dataRegExp) >= 0)) ? second.dataset["tag"] : (console.log("Error", second), "")))), secondString = ((first.dataset["name"] &&
             (first.dataset["name"].search(dataRegExp) >= 0)) ? first.dataset["name"] : ((first.dataset["teacher"] &&
             (first.dataset["teacher"].search(dataRegExp) >= 0 ||
-                first.dataset["teacher"].split(".")[1].search(dataRegExp) >= 0)) ? first.dataset["teacher"] : ((first.dataset["tag"] &&
+                first.dataset["teacher"].search(dataRegExp) >= 0)) ? first.dataset["teacher"] : ((first.dataset["tag"] &&
             (first.dataset["tag"].search(dataRegExp) >= 0)) ? first.dataset["tag"] : (console.log("Error", first), "")))), difference = secondString.length - firstString.length;
         if (difference === 0) {
             return -firstString.localeCompare(secondString);
